@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier 
 import joblib
 
 # Load dataset
@@ -17,7 +17,7 @@ X = data[["Gender","Married","ApplicantIncome","LoanAmount","CreditHistory"]]
 y = data["Loan_Status"]
 
 # Train model
-model = DecisionTreeClassifier()
+model = RandomForestClassifier()
 model.fit(X,y)
 
 # Save model
