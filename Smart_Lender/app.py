@@ -5,7 +5,6 @@ app = Flask(__name__)
 
 # Load trained model
 model = joblib.load("loan_prediction_model.pkl")
-print(model.n_features_in_)
 
 @app.route("/")
 def home():
@@ -87,6 +86,5 @@ def predict():
 
     return render_template("result.html", result=result)
 
-
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
